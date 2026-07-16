@@ -1,0 +1,451 @@
+/* ── Header ── */
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  background: rgba(10, 20, 45, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.25s;
+  letter-spacing: 0.3px;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+/* ── Hero ── */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-canvas-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.hero-greeting {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px;
+  line-height: 1.1;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 24px;
+}
+
+.hero-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.9rem, 2vw, 1.15rem);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 520px;
+  margin: 0;
+  line-height: 1.6;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+}
+
+/* ── About ── */
+.about-section {
+  padding: 100px 24px;
+  background: #0a142d;
+  color: #ffffff;
+}
+
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  text-align: center;
+  margin: 0 0 56px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.about-text p {
+  margin: 0 0 20px;
+}
+
+.about-quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px;
+  border-left: 4px solid #1e90ff;
+  background: rgba(30, 144, 255, 0.06);
+  border-radius: 8px;
+}
+
+.about-quote blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 12px;
+}
+
+.about-quote cite {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 0 16px;
+    height: 56px;
+  }
+
+  .nav {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+  }
+
+  .hero-overlay {
+    padding: 0 16px;
+  }
+
+  .about-section {
+    padding: 64px 16px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-quote {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    gap: 12px;
+  }
+
+  .nav-link {
+    font-size: 0.75rem;
+  }
+
+  .section-heading {
+    margin-bottom: 36px;
+  }
+}
+
+
+/* Layout Alignment */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #1e2d4a 0%, #0d1b2a 100%);
+  color: #f0f5fa;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px 140px; /* Leave space for Header and OceanWaves */
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.4s ease;
+}
+
+.main-content.transitioning {
+  opacity: 0.3;
+}
+
+/* Elegant Emergence Animation */
+.fade-in-up {
+  animation: emergeFromSea 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  width: 100%;
+  max-width: 1000px;
+}
+
+@keyframes emergeFromSea {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Header Adjustments */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(13, 27, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: #a0aec0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  padding: 6px 12px;
+  position: relative;
+}
+
+.nav-btn:hover, .nav-btn.active {
+  color: #ffffff;
+}
+
+/* Sleek line beneath active navigation button */
+.nav-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #52b788; /* Ocean Mint Green accent */
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-btn.active::after {
+  width: 80%;
+  left: 10%;
+}
+
+/* Common Section Layouts */
+.page-section {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(120deg, #ffffff 0%, #a5f3fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text; /* <--- Add this line */
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+/* Experience timeline styles */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.timeline-item {
+  border-left: 3px solid #52b788;
+  padding-left: 20px;
+  position: relative;
+}
+
+.timeline-item .date {
+  font-size: 0.85rem;
+  color: #52b788;
+  font-weight: 600;
+}
+
+/* Projects grid styles */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: left;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(82, 183, 136, 0.4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Skills Layout */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 700px;
+  margin: 20px auto 0;
+}
+
+.skill-tag {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(82, 183, 136, 0.1);
+  border-color: #52b788;
+  color: #52b788;
+  transform: scale(1.05);
+}
+
+/* Contact form styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 30px auto 0;
+}
+
+.contact-form input, .contact-form textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 18px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none;
+  border-color: #52b788;
+}
+
+.submit-btn {
+  background: #52b788;
+  color: #0d1b2a;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
