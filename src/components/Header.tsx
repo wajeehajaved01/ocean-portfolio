@@ -1,4 +1,4 @@
- 
+import Logo from './Logo'; // Import your new logo!
 
 interface HeaderProps {
   onNavigate: (tab: string) => void;
@@ -16,9 +16,15 @@ export default function Header({ onNavigate, activeTab }: HeaderProps) {
 
   return (
     <header className="site-header">
-      <div className="logo" onClick={() => onNavigate('home')} style={{ cursor: 'pointer' }}>
-        WJ
+      {/* Replaced "WJ" with the new <Logo /> component */}
+      <div 
+        className="logo" 
+        onClick={() => onNavigate('home')} 
+        style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+      >
+        <Logo height={28} />
       </div>
+      
       <nav className="nav-links">
         {navItems.map((item) => (
           <button
